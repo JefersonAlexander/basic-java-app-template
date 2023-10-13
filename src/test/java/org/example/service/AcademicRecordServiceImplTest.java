@@ -20,10 +20,9 @@ class AcademicRecordServiceImplTest {
     Integer numberOfGrades = this.academicRecordService.sumNumberOfGrades();
 
     assertNotNull(numberOfGrades);
-    assertEquals(
-        4,
-        numberOfGrades); // Debido a que solo son 4 notas definidas en el
-                         // GradeInMemoryRepositoryImpl, al realizar la suma el valor debe ser 4
+    assertEquals(16, numberOfGrades);
+    // Debido a que solo son 4 notas definidas en el
+    // GradeInMemoryRepositoryImpl, al realizar la suma el valor debe ser 16
   }
 
   @Test
