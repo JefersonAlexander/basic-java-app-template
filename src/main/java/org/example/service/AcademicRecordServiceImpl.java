@@ -18,31 +18,30 @@ public class AcademicRecordServiceImpl implements AcademicRecordService {
   @Override
   public Double calculateAverage() {
     logger.info("Sacando el promedio de notas");
+    logger.warn("Sacando el promedio de notas");
+    logger.error("Sacando el promedio de notas");
+
     List<Grade> gradeList = this.gradeRepository.findAllGrades();
-    if (gradeList != null) {
       int cantidad = 0;
       Double sumaNotas = 0.0;
       for (Grade grade : gradeList) {
         sumaNotas += grade.grade();
         cantidad ++;
       }
-      return sumaNotas / cantidad;
-    }
-    return null;
+    return sumaNotas / cantidad;
   }
 
   @Override
   public Integer sumNumberOfGrades() {
     logger.info("Sumando el número de calificaciones");
+    logger.warn("Sumando el número de calificaciones");
+    logger.error("Sumando el número de calificaciones");
     List<Grade> gradeList = this.gradeRepository.findAllGrades();
     // TODO sum number of grades and return the summation
-    if (gradeList != null) {
       Double sumaNotas = 0.0;
       for (Grade grade : gradeList) {
         sumaNotas += grade.grade();
       }
       return sumaNotas.intValue();
-    }
-    return null;
   }
 }
